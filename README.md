@@ -10,11 +10,6 @@
 **The most comprehensive "Hello World" starter for Kotlin Multiplatform + Compose Multiplatform.**  
 Professional structure. Maximum shared code. Easy to learn and extend.  
 Targets: **Android**, **iOS**, **Desktop** (Windows/macOS/Linux), **Web (Wasm)**.  
-Packed with foundations for permissions, Bluetooth, notifications, alarms, theming, navigation, and more — so you can build real apps fast instead of boilerplate hell.
-
-**The most comprehensive "Hello World" starter for Kotlin Multiplatform + Compose Multiplatform.**  
-Professional structure. Maximum shared code. Easy to learn and extend.  
-Targets: **Android**, **iOS**, **Desktop** (Windows/macOS/Linux), **Web (Wasm)**.  
 Packed with foundations for permissions, Bluetooth, notifications, alarms, theming, navigation, and more — so you can build real apps fast.
 
 ## Cross-Platform Features & Roadmap
