@@ -13,7 +13,8 @@ We use `expect/actual` declarations, battle-tested community libraries, and Comp
 ### Currently Supported Features
 
 These ship out-of-the-box with strong cross-platform coverage and minimal platform-specific tweaks:
-NONE YET...
+
+- NONE YET...
 
 ### Planned Features – Target Cross-Platform Coverage
 - Shared **UI / Compose Multiplatform** screens and components
