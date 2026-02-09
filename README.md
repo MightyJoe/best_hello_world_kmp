@@ -1,7 +1,7 @@
 # best_hello_world_kmp
 The most comprehensive hello world that gives you all the functionality you could ever want across multiple platforms.
 
-The most features from the get go. Easy to learn.
+The most features from the get go. Professional. Easy to learn.
 
 ## Cross-Platform Features & Roadmap
 
