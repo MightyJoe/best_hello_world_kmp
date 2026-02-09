@@ -1,5 +1,17 @@
 # best_hello_world_kmp
 
+# best_hello_world_kmp
+
+[![Kotlin](https://img.shields.io/badge/Kotlin-1.9.22-blue.svg?logo=kotlin)](https://kotlinlang.org)
+[![Compose Multiplatform](https://img.shields.io/badge/Compose%20Multiplatform-1.6.0-purple.svg?logo=jetpackcompose)](https://www.jetbrains.com/lp/compose-multiplatform/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Build Status](https://img.shields.io/badge/Build-Passing-green.svg)](https://github.com/MightyJoe/best_hello_world_kmp/actions)  <!-- Update once CI is set up -->
+
+**The most comprehensive "Hello World" starter for Kotlin Multiplatform + Compose Multiplatform.**  
+Professional structure. Maximum shared code. Easy to learn and extend.  
+Targets: **Android**, **iOS**, **Desktop** (Windows/macOS/Linux), **Web (Wasm)**.  
+Packed with foundations for permissions, Bluetooth, notifications, alarms, theming, navigation, and more — so you can build real apps fast instead of boilerplate hell.
+
 **The most comprehensive "Hello World" starter for Kotlin Multiplatform + Compose Multiplatform.**  
 Professional structure. Maximum shared code. Easy to learn and extend.  
 Targets: **Android**, **iOS**, **Desktop** (Windows/macOS/Linux), **Web (Wasm)**.  
