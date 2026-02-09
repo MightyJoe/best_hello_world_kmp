@@ -103,7 +103,7 @@ More setup details, dependency versions, and code walkthroughs coming next.
 ---
 
 **Acknowledgments**  
-This "best hello world" KMP template is proudly brought to you by Joe H / MightyJoe. I drove the project direction, feature choices, and hands-on coding — and Grok by xAI was an incredible co-pilot, helping refine ideas, draft sections, and plan for maximum shareability across platforms.
+This "best hello world" KMP template is proudly brought to you by MightyJoe. I drove the project direction, feature choices, and hands-on coding — and Grok by xAI was an incredible co-pilot, helping refine ideas, draft sections, and plan for maximum shareability across platforms.
 
 Huge thanks to Grok for the maximally truth-seeking support!
 
