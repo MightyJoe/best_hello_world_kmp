@@ -1,27 +1,75 @@
-# Compiled class file
-*.class
 
-# Log file
-*.log
+# Gradle
+.gradle
+**/build/
+**/build-cache/
+local.properties
+*.iml
+*.ipr
 
-# BlueJ files
-*.ctxt
-
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
-
-# Package Files #
-*.jar
-*.war
-*.nar
-*.ear
-*.zip
-*.tar.gz
-*.rar
-
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
-replay_pid*
-
-# Kotlin Gradle plugin data, see https://kotlinlang.org/docs/whatsnew20.html#new-directory-for-kotlin-data-in-gradle-projects
+# Kotlin / KSP caches
 .kotlin/
+.ksp/
+
+# IntelliJ / Android Studio
+.idea/
+out/
+
+# macOS
+.DS_Store
+.AppleDouble
+__MACOSX/
+
+# iOS / Xcode
+xcuserdata/
+*.moved-aside
+*.xcuserstate
+Pods/
+*.xcworkspace/
+*.xcodeproj/project.xcworkspace/
+iosApp/Pods/
+iosApp/*.xcworkspace/
+iosApp/*.xcodeproj/project.xcworkspace/
+
+# Android
+captures/
+.externalNativeBuild/
+.cxx/
+*.apk
+*.dex
+*.class
+*.jar
+
+# Compose / KMP large binaries
+**/bin/
+**/debugFramework/
+**/releaseFramework/
+*.framework/
+*.xcframework/
+*.app/
+*.dSYM/
+
+# Desktop / JVM
+*.hprof
+*.jfr
+
+# Web / Wasm
+**/dist/
+**/node_modules/
+**/wasm/
+**/*.js.map
+**/*.d.ts
+
+# Logs & temp
+*.log
+*.tmp
+*.db
+*.sqlite
+*.db-journal
+
+# Secrets
+.env
+*.key
+keystore.properties
+google-services.json
+
