@@ -23,21 +23,23 @@ These ship out-of-the-box with strong cross-platform coverage and minimal platfo
 
 ### Planned Features – Target Cross-Platform Coverage
 
-- Basic project structure ready for Android, iOS, Desktop, and Web targets
+Aiming to deliver these with maximum code sharing. Each includes the intended behavior and our planned implementation path.
 
-We aim to deliver these with maximum code sharing. Each includes the intended behavior and our planned implementation path.
+#### Basic project structure ready for Android, iOS, Desktop, and Web targets
+**Goal**: Professional and easy to learn architecture
+**Planned approach**: ViewModel + State Flow (MVVM-ish).
 
 #### Basic Navigation
 **Goal**: Unified navigation stack with back handling and deep linking support.  
-**Planned approach**: Compose Navigation (or Decompose / Voyager) with platform-aware back-button behavior via `expect/actual`.
+**Planned approach**: Compose Navigation with platform-aware back-button behavior via `expect/actual`.
 
 #### Shared Business Logic, Models, and Data Layer
-**Goal**: Clean MVVM architecture with repositories, use cases, and shared state management — fully explained in code/comments.  
-**Planned approach**: Koin or Kodein for DI, Kotlin Flow / StateFlow for reactive data, and clear separation (data/domain/presentation).
+**Goal**: MVVM-ish architecture with repositories, use cases, and shared state management — fully explained in code/comments.  
+**Planned approach**: Uni-directional data flow, and clear separation of concerns.
 
 #### Basic Theming & UI Consistency
-**Goal**: Uniform Material 3 look & feel with automatic light/dark mode, responsive layouts, and platform-aware adaptations.  
-**Planned approach**: Compose `MaterialTheme` + custom `expect/actual` for insets, window size classes, system bars, and native back gestures.
+**Goal**: Fully customizable and easy to learn UI theming.
+**Planned approach**: Custom easy to learn and organized well. With colors,Elements, etc.
 
 #### Permissions
 **Goal**: Unified runtime permission API for camera, Bluetooth, location, notifications, microphone, storage, etc.  
@@ -45,14 +47,14 @@ We aim to deliver these with maximum code sharing. Each includes the intended be
 - **iOS**: Info.plist descriptions + runtime requests (one-time/always/never)  
 - **Desktop**: OS-level file/camera/mic prompts  
 - **Web (Wasm)**: Browser permission prompts  
-**Planned approach**: Extend **moko-permissions** for mobile + custom `expect/actual` wrappers for desktop/web.
+**Planned approach**: Extend **moko-permissions** for mobile perhaps, plus custom `expect/actual` wrappers for desktop/web.
 
 #### Bluetooth (Low Energy)
 **Goal**: Reliable BLE scanning, connecting, and GATT operations with graceful fallbacks.  
 - **Android / iOS**: Full scan/connect/read/write  
 - **Desktop**: Native support via wrappers  
 - **Web (Wasm)**: Web Bluetooth API (Chrome/Edge, gesture-required)  
-**Planned approach**: **Kable** as core library + Kaluga fallback or custom actuals.
+**Planned possible approaches**: **Kable** as core library + Kaluga fallback or custom actuals. Either that or a custom implementation.
 
 #### Alerts & Dialogs
 **Goal**: Consistent alerts, confirmations, toasts, and feedback across platforms.  
@@ -60,7 +62,7 @@ We aim to deliver these with maximum code sharing. Each includes the intended be
 - **Mobile**: Native-feeling sheets/toasts when needed  
 - **Desktop**: Themed or system dialogs  
 - **Web**: Browser alerts + custom modals  
-**Planned approach**: **Compose Material3** `AlertDialog` / `Snackbar` as primary + `expect/actual` for native fallbacks.
+**Planned possible approach**: **Compose Material3** `AlertDialog` / `Snackbar` as primary if material will let me piecemeal just AlertDialog + `expect/actual` for native fallbacks.
 
 #### Local Notifications
 **Goal**: Schedule and show local notifications (sound/vibration where supported).  
@@ -68,7 +70,7 @@ We aim to deliver these with maximum code sharing. Each includes the intended be
 - **iOS**: UNUserNotificationCenter  
 - **Desktop**: System tray notifications  
 - **Web**: Notification API  
-**Planned approach**: **KMPNotifier** or **Alarmee** + unified scheduling.
+**Planned possible approaches**: **KMPNotifier** or **Alarmee** + unified scheduling.
 
 #### Alarms & Background Scheduling
 **Goal**: Best-effort timed wake-ups and tasks.  
@@ -76,22 +78,21 @@ We aim to deliver these with maximum code sharing. Each includes the intended be
 - **iOS**: Limited (notifications / BGTaskScheduler)  
 - **Desktop**: JVM timers  
 - **Web**: Service Worker timers (limited)  
-**Planned approach**: **Alarmee** for mobile + platform fallback timers.
+**Planned possible approach**: **Alarmee** for mobile + platform fallback timers.
 
 #### Push Notifications (Remote)
 **Goal**: Handle remote pushes with deep linking.  
 - **Android**: FCM  
 - **iOS**: APNs  
 - **Desktop / Web**: Experimental (Web Push where possible)  
-**Planned approach**: **KMPNotifier** with unified init + platform channels.
+**Planned possible approach**: **KMPNotifier** with unified init + platform channels.
 
 ### General Roadmap Notes
 
 - Mobile (Android + iOS) gets priority for native fidelity.  
 - Desktop leverages JVM APIs and fallbacks.  
-- Web (Wasm) documents browser constraints (no true background, gesture limits).  
+- Web (Wasm) documents browser constraints (no true background, gesture limits).
 - UI stays fully shared via Compose wherever possible; native only for unavoidable UX gaps.  
-- We welcome contributions — especially desktop/Web support, tests, docs, and bug fixes!
 
 This section will evolve as features graduate from planned → supported.
 
@@ -102,8 +103,7 @@ This section will evolve as features graduate from planned → supported.
 3. Run on Desktop (`./gradlew :composeApp:run`) or Web (`./gradlew :composeApp:wasmJsBrowserDevelopmentRun`) — easiest to test first!  
 4. Explore `composeApp/src/commonMain` — that's your shared heart.
 
-More setup details, dependency versions, and code walkthroughs coming next.
-
+More setup details, dependency versions, and code walkthroughs coming...
 
 
 ---
