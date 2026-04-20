@@ -25,9 +25,58 @@ These ship out-of-the-box with strong cross-platform coverage and minimal platfo
 
 Aiming to deliver these with maximum code sharing. Each includes the intended behavior and our planned implementation path.
 
-#### Basic project structure ready for Android, iOS, Desktop, and Web targets
-**Goal**: Professional and easy to learn architecture
-**Planned approach**: ViewModel + State Flow (MVVM-ish).
+## Architecture & Design Overview (Planned)
+
+This project is a comprehensive **Kotlin Multiplatform (KMP)** "Hello World" template built with **Compose Multiplatform**.  
+It aims to be the best starting point for ambitious cross-platform apps targeting **Android, iOS, Desktop (JVM), and Web (Wasm)** with maximum code sharing.
+
+### Architecture vs Design
+
+| Aspect                  | Architecture (Big Structure)                          | Design (Code Style & Quality)                          | Why This Choice |
+|-------------------------|-------------------------------------------------------|--------------------------------------------------------|-----------------|
+| **Overall Pattern**     | MVVM (Model-View-ViewModel) + Unidirectional Data Flow | Rich Domain Model (where it makes sense)              | Familiar to mobile devs + intuitive for complex features |
+| **Code Sharing**        | Kotlin Multiplatform with Compose Multiplatform       | Maximum shared code in `commonMain`                   | Write once, run everywhere (UI + logic) |
+| **Layer Organization**  | Clear separation: UI → ViewModel → Domain → Data     | Thin ViewModels + Rich Domain Models                  | Keeps UI simple and business logic testable |
+| **Folder Structure**    | Feature-based + Layer-based                           | Domain objects represent real concepts                | Scalable as the "Hello World" grows into a real app |
+| **Platform Specific**   | `expect/actual` + platform modules                    | Abstracted via interfaces                             | Clean platform differences without polluting shared code |
+
+### Layer Responsibilities
+
+| Layer              | Responsibility                                              | Location                              | Contains                                      | Should NOT Contain |
+|--------------------|-------------------------------------------------------------|---------------------------------------|-----------------------------------------------|--------------------|
+| **Views / UI**     | Rendering screens and handling user input                   | `composeApp/src/commonMain/kotlin/.../ui/` | Compose screens, components, navigation      | Business logic |
+| **ViewModels**     | UI state management and user actions                        | `.../presentation/` or `viewmodels/`  | StateFlow, UI events, commands                | Domain rules, data access |
+| **Domain**         | Core business logic and real-world concepts                 | `.../domain/`                         | Entities, Use Cases, Repositories (interfaces) | UI, platform APIs |
+| **Data**           | Data sources and repositories                               | `.../data/`                           | Local storage, network, mappers               | UI state |
+| **Services**       | Coordination and orchestration                              | `.../services/` or `core/`            | Feature services, platform abstractions       | Direct UI updates |
+| **Platform**       | Platform-specific implementations                           | `androidMain`, `iosMain`, `jvmMain`, `wasmMain` | Permissions, Bluetooth, Notifications, etc. | Shared business logic |
+
+### Project Folder Structure (Proposed)
+
+```text
+best_hello_world_kmp/
+├── composeApp/
+│   └── src/
+│       ├── commonMain/kotlin/
+│       │   ├── di/                  ← Dependency Injection
+│       │   ├── domain/              ← Rich Domain Models + Use Cases
+│       │   ├── data/                ← Repositories, DTOs, Mappers
+│       │   ├── presentation/        ← ViewModels + UI State
+│       │   ├── ui/                  ← Compose Screens & Components
+│       │   ├── navigation/          ← Navigation setup
+│       │   ├── theme/               ← Theming
+│       │   └── core/                ← Utilities, extensions, constants
+│       ├── androidMain/             ← Android-specific
+│       ├── iosMain/                 ← iOS-specific
+│       ├── jvmMain/                 ← Desktop
+│       └── wasmMain/                ← Web
+├── iosApp/                          ← Xcode project for iOS
+├── androidApp/                      ← Optional Android app module (if needed)
+├── build.gradle.kts
+├── settings.gradle.kts
+└── README.md
+
+```
 
 #### Basic Navigation
 **Goal**: Unified navigation stack with back handling and deep linking support.  
